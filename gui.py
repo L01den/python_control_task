@@ -1,17 +1,32 @@
+def hello():
+    print('''   Меню:
+        Добавить запись - w
+        Вывести названия всех заметок - ra
+        Вывести заметку по названию - r
+        Дописать заметку - m
+        Вывети все заметки от даты - g
+        Удалить заметку - d
+        Выход - e
+    ''')
+
+
 def get_command():
     act = str(input('Выбирте действие: '))
-    print('')
+    print()
     return act
 
 
-def write_all():
-    name = str(input('Введите название заметки: '))
+def write_note():
     note = str(input('Текст заметки: '))
-    print('')
-    data = [name, note]
-    return data
+    print()
+    return note
 
 def write_name():
     name = str(input('Введите название заметки: '))
-    print('')
+    print()
+    return name
+
+def write_date():
+    name = str(input('Введите дату в формате 2000-12-31: '))
+    print()
     return name

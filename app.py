@@ -1,25 +1,33 @@
 import db
 import gui as g
-import operation as o
 
 
 def run():
     print('Это консольное приложения для напсиания заметок')
     print()
     while True:
-        o.hello()
+        g.hello()
         command = g.get_command()
         match command:
             case "w":
-                data = g.write_all()
-                db.save_in_file(data)
+                name = g.write_name()
+                note = g.write_note()
+                db.save_in_file(name, note)
             case "ra":
                 db.read_all()
             case "r":
                 data = g.write_name()
                 db.read_note(data)
             case "d":
-                print('d ещё не написан')
+                data = g.write_name()
+                db.delite_note(data)
+            case "m":
+                name = g.write_name()
+                note = g.write_note()
+                db.mod_note(name, note)   
+            case "g":
+                date = g.write_date()
+                db.search_by_date(date)     
             case "e":
                 break
             case _:
