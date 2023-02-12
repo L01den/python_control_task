@@ -11,15 +11,13 @@ def run():
         command = g.get_command()
         match command:
             case "w":
-                data = g.write()
+                data = g.write_all()
                 db.save_in_file(data)
-                # print(data)
             case "ra":
                 db.read_all()
-                # print('ra ещё не написан')
             case "r":
-                db.read_note()
-                print('r ещё не написан')
+                data = g.write_name()
+                db.read_note(data)
             case "d":
                 print('d ещё не написан')
             case "e":
